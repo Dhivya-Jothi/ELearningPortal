@@ -19,6 +19,7 @@ namespace OnlineElearningSystem.Controllers
 		public ActionResult SignUp()
 		{
 			return View();
+		
 		}
 		[HttpPost]
 		[ActionName("SignUp")]
