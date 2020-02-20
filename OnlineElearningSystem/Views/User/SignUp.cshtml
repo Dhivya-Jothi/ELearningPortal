@@ -1,0 +1,73 @@
+﻿@model OnlineElearningSystem.Entity.UserDetail
+
+@{
+	ViewBag.Title = "SignUp";
+}
+
+<h2>SignUp</h2>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+{
+	<table>
+		<tr>
+			<td>userId</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("UserID")</td>
+			@Html.ValidationMessageFor(model => model.userId)
+		</tr>
+		<tr>
+			<td>userName</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("UserName")</td>
+			@Html.ValidationMessageFor(model => model.userName)
+		</tr>
+		<tr>
+			<td>password</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("Password")</td>
+			@Html.ValidationMessageFor(model => model.password)
+		</tr>
+		<tr>
+			<td>confirmPassword</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("ConfirmPassword")</td>
+			@Html.ValidationMessageFor(model => model.confirmPassword)
+		</tr>
+		<tr>
+			<td>gender</td>
+			<td style="margin-top:100%;height:10%">@Html.EnumDropDownListFor(model => model.gender, "Select Gender")</td>
+			@Html.ValidationMessageFor(model => model.gender)
+		</tr>
+		<tr>
+			<td>mobileNumber</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("MobileNumber")</td>
+			@Html.ValidationMessageFor(model => model.mobileNumber)
+		</tr>
+		<tr>
+			<td>mailId</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("MailId")</td>
+			@Html.ValidationMessageFor(model => model.mailId)
+		</tr>
+		<tr>
+			<td>dateOfBirth</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("DateOfBirth")</td>
+			@Html.ValidationMessageFor(model => model.dateOfBirth)
+		</tr>
+		<tr>
+			<td>mediumOfStudy</td>
+			<td style="margin-top:100%;height:10%">@Html.TextBox("MediumOfStudy")</td>
+			@Html.ValidationMessageFor(model => model.mediumOfStudy)
+		</tr>
+		<tr>
+			<td>userRole</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.RadioButtonFor(model => model.userRole, "User")User
+				@Html.RadioButtonFor(model => model.userRole, "Admin")Admin
+			</td>
+			@Html.ValidationMessageFor(model => model.userRole)
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" runat="server" />
+			</td>
+		</tr>
+	</table>
+
+}

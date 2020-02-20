@@ -1,0 +1,23 @@
+﻿@model OnlineElearningSystem.Entity.UserDetail
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<table>
+
+	<tr>
+		<td>userName</td>
+		<td style="margin-top:100%;height:10%">@Html.TextBox("UserName")</td>
+	</tr>
+	<tr>
+		<td>password</td>
+		<td style="margin-top:100%;height:10%">@Html.TextBox("Password")</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="submit" runat="server" value="Login" />
+		</td>
+	</tr>
+</table>
