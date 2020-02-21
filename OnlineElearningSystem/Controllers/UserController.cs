@@ -1,9 +1,6 @@
 ﻿using OnlineElearningSystem.DAL;
 using OnlineElearningSystem.Entity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OnlineElearningSystem.Controllers
@@ -16,6 +13,7 @@ namespace OnlineElearningSystem.Controllers
         {
             return View();
         }
+		[HttpGet]
 		public ActionResult SignUp()
 		{
 			return View();
@@ -23,15 +21,17 @@ namespace OnlineElearningSystem.Controllers
 		}
 		[HttpPost]
 		[ActionName("SignUp")]
-		public ActionResult CreateUser()
+		public ActionResult CreateUser(UserDetail userDetail)
 		{
-			UserDetail userDetail = new UserDetail();
-			TryUpdateModel(userDetail);
 			user.AddUser(userDetail);
-			TempData["Message"] = "User Detail added";
-			return RedirectToAction("Index");
+			if (ModelState.IsValid)
+			{
+				
+				return RedirectToAction("Login");
+			}
+			return View();
 		}
-		public ActionResult Login()
+		public ActionResult Login(UserDetail userDetail)
 		{
 			return View();
 		}

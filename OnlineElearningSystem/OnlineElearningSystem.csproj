@@ -130,6 +130,8 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Shared\MasterPage.cshtml" />
     <Content Include="Views\Master\Master.cshtml" />
+    <Content Include="Views\Shared\ElearnView.cshtml" />
+    <Content Include="Views\Shared\Eportal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

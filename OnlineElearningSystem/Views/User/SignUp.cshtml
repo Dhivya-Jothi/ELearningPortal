@@ -4,70 +4,95 @@
 	ViewBag.Title = "SignUp";
 }
 
-<h2>SignUp</h2>
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+@Html.ValidationSummary(true)
 @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
-	<table>
-		<tr>
-			<td>userId</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("UserID")</td>
+	
+<table style="line-height:30px">
+	@{
+		Html.RenderPartial("Eportal");
+	}
+	<tr>
+		<td>userId</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.userId)
 			@Html.ValidationMessageFor(model => model.userId)
-		</tr>
-		<tr>
-			<td>userName</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("UserName")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>userName</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.userName)
 			@Html.ValidationMessageFor(model => model.userName)
-		</tr>
-		<tr>
-			<td>password</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("Password")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>password</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.password)
 			@Html.ValidationMessageFor(model => model.password)
-		</tr>
-		<tr>
-			<td>confirmPassword</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("ConfirmPassword")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>confirmPassword</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.confirmPassword)
 			@Html.ValidationMessageFor(model => model.confirmPassword)
-		</tr>
-		<tr>
-			<td>gender</td>
-			<td style="margin-top:100%;height:10%">@Html.EnumDropDownListFor(model => model.gender, "Select Gender")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>gender</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.EnumDropDownListFor(model => model.gender, "Select Gender")
 			@Html.ValidationMessageFor(model => model.gender)
-		</tr>
-		<tr>
-			<td>mobileNumber</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("MobileNumber")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>mobileNumber</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.mobileNumber)
 			@Html.ValidationMessageFor(model => model.mobileNumber)
-		</tr>
-		<tr>
-			<td>mailId</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("MailId")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>mailId</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.mailId)
 			@Html.ValidationMessageFor(model => model.mailId)
-		</tr>
-		<tr>
-			<td>dateOfBirth</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("DateOfBirth")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>dateOfBirth</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.dateOfBirth)
 			@Html.ValidationMessageFor(model => model.dateOfBirth)
-		</tr>
-		<tr>
-			<td>mediumOfStudy</td>
-			<td style="margin-top:100%;height:10%">@Html.TextBox("MediumOfStudy")</td>
+		</td>
+	</tr>
+	<tr>
+		<td>mediumOfStudy</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.TextBoxFor(model => model.mediumOfStudy)
 			@Html.ValidationMessageFor(model => model.mediumOfStudy)
-		</tr>
-		<tr>
-			<td>userRole</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.RadioButtonFor(model => model.userRole, "User")User
-				@Html.RadioButtonFor(model => model.userRole, "Admin")Admin
-			</td>
+		</td>
+	</tr>
+	<tr>
+		<td>userRole</td>
+		<td style="margin-top:100%;height:10%">
+			@Html.RadioButtonFor(model => model.userRole, "User")User
+			@Html.RadioButtonFor(model => model.userRole, "Admin")Admin
 			@Html.ValidationMessageFor(model => model.userRole)
-		</tr>
-		<tr>
-			<td>
-				<input type="submit" runat="server" />
-			</td>
-		</tr>
-	</table>
+		</td>
 
+	</tr>
+	<tr>
+		<td>
+			<input type="submit" value="Submit" />
+			@Html.Partial("ElearnView")
+
+		</td>
+	</tr>
+	
+
+</table>
 }
