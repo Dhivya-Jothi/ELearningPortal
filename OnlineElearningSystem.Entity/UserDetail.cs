@@ -5,6 +5,7 @@ namespace OnlineElearningSystem.Entity
 {
 	public class UserDetail
 	{
+		[Key]
 		[Required]
 		public string userId { get; set; }
 		[Required]

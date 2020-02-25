@@ -1,6 +1,7 @@
 ﻿using OnlineElearningSystem.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OnlineElearningSystem.DAL
 {
@@ -11,6 +12,11 @@ namespace OnlineElearningSystem.DAL
 		{
 
 		}
+		public static List<UserDetail>SignUp()
+		{
+			UserDetailDB userDetailDB = new UserDetailDB();
+			return userDetailDB.userDetail.ToList();
+		}
 		public static IEnumerable<UserDetail> GetUserDetails()
 		{
 			return UserList;
@@ -19,5 +25,7 @@ namespace OnlineElearningSystem.DAL
 		{
 			UserList.Add(userDetail);
 		}
+
+		
 	}
 }
