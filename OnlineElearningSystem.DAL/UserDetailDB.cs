@@ -14,6 +14,6 @@ namespace OnlineElearningSystem.DAL
 		{
 
 		}
-		public DbSet<UserDetail> userDetail { get; set; }
+		public DbSet<UserDetail> userDetails { get; set; }
 	}
 }

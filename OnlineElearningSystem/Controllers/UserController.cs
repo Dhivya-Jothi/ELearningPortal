@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace OnlineElearningSystem.Controllers
 {
-	
+	[HandleError]	
     public class UserController : Controller
     {
-		UserRespositry user=new UserRespositry();
+		UserRespositry userRepositry=new UserRespositry();
 		public ActionResult Index()
         {
             return View();
@@ -25,10 +25,11 @@ namespace OnlineElearningSystem.Controllers
 		public ActionResult CreateUser(UserDetail userDetail)
 		{
 			IEnumerable<UserDetail> detail = UserRespositry.SignUp();
-			user.AddUser(userDetail);
+			
 			if (ModelState.IsValid)
 			{
-				
+				UserRespositry.SignUp();
+				userRepositry.AddUser(userDetail);
 				return RedirectToAction("Login");
 			}
 			return View();
@@ -36,6 +37,11 @@ namespace OnlineElearningSystem.Controllers
 		public ActionResult Login(UserDetail userDetail)
 		{
 			return View();
+		}
+		[ErrorHandling]
+		public ActionResult Test()
+		{
+			throw new Exception("Error have been occured");
 		}
 	}
 }

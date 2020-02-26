@@ -121,8 +121,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="ErrorHandling.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,6 +141,9 @@
     <Content Include="Views\Master\Master.cshtml" />
     <Content Include="Views\Shared\ElearnView.cshtml" />
     <Content Include="Views\Shared\Eportal.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Error\ErrorFound.cshtml" />
+    <Content Include="Views\Shared\customError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

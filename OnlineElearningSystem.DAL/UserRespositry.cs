@@ -8,22 +8,25 @@ namespace OnlineElearningSystem.DAL
     public class UserRespositry
     {
 		public static List<UserDetail> UserList = new List<UserDetail>();
-		static UserRespositry()
-		{
+		//static UserRespositry()
+		//{
 
-		}
+		//}
 		public static List<UserDetail>SignUp()
 		{
 			UserDetailDB userDetailDB = new UserDetailDB();
-			return userDetailDB.userDetail.ToList();
+			return userDetailDB.userDetails.ToList();
 		}
-		public static IEnumerable<UserDetail> GetUserDetails()
-		{
-			return UserList;
-		}
+		//public static IEnumerable<UserDetail> GetUserDetails()
+		//{
+		//	return UserList;
+		//}
 		public void AddUser(UserDetail userDetail)
 		{
-			UserList.Add(userDetail);
+
+			UserDetailDB userDetailDB = new UserDetailDB();
+			userDetailDB.userDetails.Add(userDetail);
+			userDetailDB.SaveChanges();
 		}
 
 		

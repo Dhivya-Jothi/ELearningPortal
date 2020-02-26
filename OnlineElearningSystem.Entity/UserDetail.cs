@@ -15,13 +15,16 @@ namespace OnlineElearningSystem.Entity
 		public string userName { get; set; }
 		[Required]
 		[MaxLength(20)]
+		//[RegularExpression(@"((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", ErrorMessage ="Enter valid password, example:MyTeddy@34")]
 		public string password { get; set; }
 		[Required]
 		[MaxLength(20)]
+		[Compare("password")]
 		public string confirmPassword { get; set; }
 		public Sex gender { get; set; }
 		[DataType(DataType.PhoneNumber)]
 		[Required]
+		//[RegularExpression(@"(0 / 91)?[7 - 9][0 - 9]{9}", ErrorMessage = "Enter valid mobile number")]
 		public string mobileNumber { get; set; }
 		[DataType(DataType.EmailAddress)]
 		[Required]
