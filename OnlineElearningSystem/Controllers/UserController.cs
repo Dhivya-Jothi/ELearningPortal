@@ -25,7 +25,6 @@ namespace OnlineElearningSystem.Controllers
 		public ActionResult CreateUser(UserDetail userDetail)
 		{
 			IEnumerable<UserDetail> detail = UserRespositry.SignUp();
-			
 			if (ModelState.IsValid)
 			{
 				UserRespositry.SignUp();
