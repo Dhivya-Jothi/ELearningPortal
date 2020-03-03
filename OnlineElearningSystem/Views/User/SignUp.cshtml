@@ -1,98 +1,90 @@
-﻿@model OnlineElearningSystem.Entity.UserDetail
+﻿@model OnlineElearningSystem.Models.UserDetailModel
 
 @{
 	ViewBag.Title = "SignUp";
 }
 
+<h2>SignUp</h2>
 
 @Html.ValidationSummary(true)
 @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
-	
-<table style="line-height:30px">
-	@{
-		Html.RenderPartial("Eportal");
-	}
-	<tr>
-		<td>userId</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.userId)
-			@Html.ValidationMessageFor(model => model.userId)
-		</td>
-	</tr>
-	<tr>
-		<td>userName</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.userName)
-			@Html.ValidationMessageFor(model => model.userName)
-		</td>
-	</tr>
-	<tr>
-		<td>password</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.password)
-			@Html.ValidationMessageFor(model => model.password)
-		</td>
-	</tr>
-	<tr>
-		<td>confirmPassword</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.confirmPassword)
-			@Html.ValidationMessageFor(model => model.confirmPassword)
-		</td>
-	</tr>
-	<tr>
-		<td>gender</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.EnumDropDownListFor(model => model.gender, "Select Gender")
-			@Html.ValidationMessageFor(model => model.gender)
-		</td>
-	</tr>
-	<tr>
-		<td>mobileNumber</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.mobileNumber)
-			@Html.ValidationMessageFor(model => model.mobileNumber)
-		</td>
-	</tr>
-	<tr>
-		<td>mailId</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.mailId)
-			@Html.ValidationMessageFor(model => model.mailId)
-		</td>
-	</tr>
-	<tr>
-		<td>dateOfBirth</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.dateOfBirth)
-			@Html.ValidationMessageFor(model => model.dateOfBirth)
-		</td>
-	</tr>
-	<tr>
-		<td>mediumOfStudy</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.TextBoxFor(model => model.mediumOfStudy)
-			@Html.ValidationMessageFor(model => model.mediumOfStudy)
-		</td>
-	</tr>
-	<tr>
-		<td>userRole</td>
-		<td style="margin-top:100%;height:10%">
-			@Html.RadioButtonFor(model => model.userRole, "User")User
-			@Html.RadioButtonFor(model => model.userRole, "Admin")Admin
-			@Html.ValidationMessageFor(model => model.userRole)
-		</td>
 
-	</tr>
-	<tr>
-		<td>
-			<input type="submit" value="Submit" />
-			@Html.Partial("ElearnView")
+	<table style="line-height:30px">
+		@{
+			Html.RenderPartial("Eportal");
+		}
+		<tr>
+			<td>userId</td>
+			<td style="margin-top:100%;height:10%">
+			
+				@Html.TextBoxFor(model => model.userId)
+				@Html.ValidationMessageFor(model => model.userId)
+			</td>
+		</tr>
+		<tr>
+			<td>userName</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.userName)
+				@Html.ValidationMessageFor(model => model.userName)
+			</td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.password)
+				@Html.ValidationMessageFor(model => model.password)
+			</td>
+		</tr>
+		<tr>
+			<td>confirmPassword</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.confirmPassword)
+				@Html.ValidationMessageFor(model => model.confirmPassword)
+			</td>
+		</tr>
+		<tr>
+			<td>gender</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.RadioButtonFor(m => m.gender, "Male")Male
+				@Html.RadioButtonFor(m => m.gender, "Female")Female
 
-		</td>
-	</tr>
-	
+			</td>
+		</tr>
+		<tr>
+			<td>mobileNumber</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.mobileNumber)
+				@Html.ValidationMessageFor(model => model.mobileNumber)
+			</td>
+		</tr>
+		<tr>
+			<td>mailId</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.mailId)
+				@Html.ValidationMessageFor(model => model.mailId)
+			</td>
+		</tr>
+		<tr>
+			<td>dateOfBirth</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.dateOfBirth)
+				@Html.ValidationMessageFor(model => model.dateOfBirth)
+			</td>
+		</tr>
+		<tr>
+			<td>mediumOfStudy</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.mediumOfStudy)
+				@Html.ValidationMessageFor(model => model.mediumOfStudy)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Submit" />
+				@Html.Partial("ElearnView")
 
-</table>
+			</td>
+		</tr>
+	</table>
 }

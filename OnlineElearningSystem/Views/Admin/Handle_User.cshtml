@@ -1,0 +1,58 @@
+﻿@model  IEnumerable<OnlineElearningSystem.Entity.UserDetail>
+@{
+	ViewBag.Title = "Handle_User";
+}
+
+@Html.ActionLink("Back", "Login", "User")
+<h2>Welcome</h2>
+
+<table>
+	<tr>
+		<th>UserId</th>
+		<th>UserName</th>
+		<th>Password</th>
+		<th>Gender</th>
+		<th>MobileNumber</th>
+		<th>MailId</th>
+		<th>DateOfBirth</th>
+		<th>MediumOfStudy</th>
+		<th>Role</th>
+	</tr>
+	@foreach (OnlineElearningSystem.Entity.UserDetail item in Model)
+	{
+		<tr>
+			<td>
+				@item.userId
+			</td>
+			<td>
+				@item.userName
+			</td>
+			<td>
+				@item.confirmPassword
+			</td>
+			<td>
+				@item.gender
+			</td>
+			<td>
+				@item.mobileNumber
+			</td>
+			<td>
+				@item.mailId
+			</td>
+			<td>
+				@item.dateOfBirth
+			</td>
+			<td>
+				@item.mediumOfStudy
+			</td>
+			<td>
+				@item.userRole
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { userId = item.userId })
+				@Html.ActionLink("Delete", "Delete", new { userId = item.userId })
+			</td>
+
+		</tr>
+	}
+</table>

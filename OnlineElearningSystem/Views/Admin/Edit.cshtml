@@ -1,0 +1,56 @@
+﻿@model OnlineElearningSystem.Entity.UserDetail
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@Html.ValidationSummary(true)
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post))
+{
+	@Html.HiddenFor(model => model.userId)
+	@Html.AntiForgeryToken()
+	<table>
+		<tr>
+			<th>UserId</th>
+			<th>UserName</th>
+			<th>Password</th>
+			<th>Gender</th>
+			<th>MobileNumber</th>
+			<th>MailId</th>
+			<th>DateOfBirth</th>
+			<th>MediumOfStudy</th>
+			<th>Role</th>
+		</tr>
+		<tr>
+			<td>
+				@Html.TextBoxFor(model => model.userId)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.userName)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.confirmPassword)
+				@Html.ValidationMessageFor(model => model.confirmPassword)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.gender)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.mobileNumber)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.mailId)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.dateOfBirth)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.mediumOfStudy)
+			</td>
+			<td>
+				@Html.TextBoxFor(model => model.userRole)
+			</td>
+		</tr>
+	</table>
+	<input type="submit" />
+}

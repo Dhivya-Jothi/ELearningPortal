@@ -121,20 +121,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CourseDetailController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="ErrorHandling.cs" />
+    <Compile Include="CustomError.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\UserDetailModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Shared\MasterPage.cshtml" />
@@ -144,6 +147,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Error\ErrorFound.cshtml" />
     <Content Include="Views\Shared\customError.cshtml" />
+    <Content Include="Views\User\SignUp.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Handle_User.cshtml" />
+    <Content Include="Views\User\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,9 +160,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\CourseDetail\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineElearningSystem.BL\OnlineElearningSystem.BL.csproj">
+      <Project>{8854D4B7-3E93-441C-9813-72E21D66651B}</Project>
+      <Name>OnlineElearningSystem.BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineElearningSystem.DAL\OnlineElearningSystem.DAL.csproj">
       <Project>{D39409E7-AAFC-4100-BDBC-D1FDCFF83BE1}</Project>
       <Name>OnlineElearningSystem.DAL</Name>

@@ -1,5 +1,7 @@
-﻿using OnlineElearningSystem.DAL;
+﻿using OnlineElearningSystem.BL;
+using OnlineElearningSystem.DAL;
 using OnlineElearningSystem.Entity;
+using OnlineElearningSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -9,7 +11,7 @@ namespace OnlineElearningSystem.Controllers
 	[HandleError]	
     public class UserController : Controller
     {
-		UserRespositry userRepositry=new UserRespositry();
+		public static UserDetail role { get; set; }
 		public ActionResult Index()
         {
             return View();
@@ -22,25 +24,77 @@ namespace OnlineElearningSystem.Controllers
 		}
 		[HttpPost]
 		[ActionName("SignUp")]
-		public ActionResult CreateUser(UserDetail userDetail)
+		public ActionResult CreateUser(UserDetailModel userDetailModel)
 		{
-			IEnumerable<UserDetail> detail = UserRespositry.SignUp();
+			
+			IEnumerable<UserDetail> detail = UserRepository.SignUp();
 			if (ModelState.IsValid)
 			{
-				UserRespositry.SignUp();
-				userRepositry.AddUser(userDetail);
-				return RedirectToAction("Login");
+				UserDetail userDetail = new UserDetail {
+				userId = userDetailModel.userId,
+				userName = userDetailModel.userName,
+				gender = userDetailModel.gender,
+				confirmPassword = userDetailModel.confirmPassword,
+				mobileNumber = userDetailModel.mobileNumber,
+				mailId = userDetailModel.mailId,
+				dateOfBirth = userDetailModel.dateOfBirth,
+				mediumOfStudy = userDetailModel.mediumOfStudy,
+				userRole = "User",
+			};
+				User user = new User();
+				//UserRepository.SignUp();
+				user.SignUp(userDetail);
+				//return RedirectToAction("Login");
 			}
 			return View();
 		}
-		public ActionResult Login(UserDetail userDetail)
+		[HttpGet]
+		public ActionResult Login()
+		{
+			return View();
+
+		}
+		[HttpPost]
+		[ActionName("Login")]
+		public ActionResult Login(LoginModel loginModel)
+		{
+
+			if (ModelState.IsValid)
+			{
+				UserDetail userDetail = new UserDetail
+				{
+					userName = loginModel.userName,
+					confirmPassword = loginModel.password,
+
+				};
+				User user = new User();
+				role = user.Login(userDetail);
+				return RedirectToAction("Home", role);
+				//if (user.Login(userDetail) == "Admin")
+				//{
+				//	return RedirectToAction("Handle_User", "Admin");
+				//}
+				//else if (user.Login(userDetail) == "User")
+				//{
+				//	return RedirectToAction("");
+				//}
+				//else
+				//{
+				//	ViewBag.Message = "Username or Password incorrect";
+				//	return RedirectToAction("SignUp");
+				//}
+			}
+				return View();
+		}
+		public ActionResult Home()
 		{
 			return View();
 		}
-		[ErrorHandling]
+		[CustomError]
 		public ActionResult Test()
 		{
 			throw new Exception("Error have been occured");
 		}
+
 	}
 }

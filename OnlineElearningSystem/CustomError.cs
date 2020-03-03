@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace OnlineElearningSystem
 {
-	public class ErrorHandling: HandleErrorAttribute
+	public class CustomError: HandleErrorAttribute
 	{
 		public override void OnException(ExceptionContext exceptionContext)
 		{
