@@ -51,19 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202002251316275_InitialCreate.cs" />
-    <Compile Include="Migrations\202002251316275_InitialCreate.designer.cs">
-      <DependentUpon>202002251316275_InitialCreate.cs</DependentUpon>
+    <Compile Include="CategoryRepositry.cs" />
+    <Compile Include="CourseRepositry.cs" />
+    <Compile Include="LinkRepositry.cs" />
+    <Compile Include="Migrations\202003130415576_doll.cs" />
+    <Compile Include="Migrations\202003130415576_doll.designer.cs">
+      <DependentUpon>202003130415576_doll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002291033507_psych.cs" />
-    <Compile Include="Migrations\202002291033507_psych.designer.cs">
-      <DependentUpon>202002291033507_psych.cs</DependentUpon>
+    <Compile Include="Migrations\202003161126238_gh.cs" />
+    <Compile Include="Migrations\202003161126238_gh.designer.cs">
+      <DependentUpon>202003161126238_gh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003021114435_g.cs" />
-    <Compile Include="Migrations\202003021114435_g.designer.cs">
-      <DependentUpon>202003021114435_g.cs</DependentUpon>
+    <Compile Include="Migrations\202003170625154_dekd.cs" />
+    <Compile Include="Migrations\202003170625154_dekd.designer.cs">
+      <DependentUpon>202003170625154_dekd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="TopicRepositry.cs" />
     <Compile Include="UserDetailDB.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,14 +83,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002251316275_InitialCreate.resx">
-      <DependentUpon>202002251316275_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003130415576_doll.resx">
+      <DependentUpon>202003130415576_doll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002291033507_psych.resx">
-      <DependentUpon>202002291033507_psych.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003161126238_gh.resx">
+      <DependentUpon>202003161126238_gh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003021114435_g.resx">
-      <DependentUpon>202003021114435_g.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003170625154_dekd.resx">
+      <DependentUpon>202003170625154_dekd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

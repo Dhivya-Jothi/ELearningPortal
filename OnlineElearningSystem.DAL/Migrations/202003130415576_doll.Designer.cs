@@ -7,13 +7,13 @@ namespace OnlineElearningSystem.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class g : IMigrationMetadata
+    public sealed partial class doll : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(g));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(doll));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003021114435_g"; }
+            get { return "202003130415576_doll"; }
         }
         
         string IMigrationMetadata.Source

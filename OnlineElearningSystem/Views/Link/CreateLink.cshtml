@@ -1,0 +1,40 @@
+﻿@model OnlineElearningSystem.Models.LinkModel
+
+@{
+	ViewBag.Title = "CreateLink";
+}
+
+<h2>CreateLink</h2>
+
+@Html.ValidationSummary(true)
+
+@using (Html.BeginForm("CreateLink", "Link", FormMethod.Post))
+{
+
+	<table style="line-height:30px">
+		<tr>
+			<td>Topic</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.DropDownListFor(model => model.topicId, (IEnumerable<SelectListItem>)ViewBag.Topic, "Choose Topic")
+
+			</td>
+
+		</tr>
+		<tr>
+			<td>Link</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.link, new { @maxlength = "100" })
+				@Html.ValidationMessageFor(model => model.link, "", new { style = "color:red" })
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Submit" />
+
+
+			</td>
+		</tr>
+	</table>
+}
+

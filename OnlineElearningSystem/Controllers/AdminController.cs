@@ -1,7 +1,6 @@
 ﻿using OnlineElearningSystem.DAL;
 using OnlineElearningSystem.Entity;
 using OnlineElearningSystem.Models;
-using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -31,8 +30,7 @@ namespace OnlineElearningSystem.Controllers
 			return View(user);
 		}
 		[HttpPost]
-		[ActionName("Edit")]
-		public ActionResult EditUser(UserDetailModel userDetailModel)
+		public ActionResult Edit(UserDetailModel userDetailModel)
 		{
 
 			UserDetail userDetail = new UserDetail();
@@ -49,11 +47,11 @@ namespace OnlineElearningSystem.Controllers
 
 			return RedirectToAction("Handle_User");
 		}
-		public ActionResult Delete(UserDetail user)
+		public ActionResult Delete(int id)
 		{
-			UserDetail userDetail = new UserDetail();
-			userRepository.DeleteUser(user);
+			userRepository.DeleteUser(id);
 			return RedirectToAction("Handle_User");
 		}
+
 	}
 }

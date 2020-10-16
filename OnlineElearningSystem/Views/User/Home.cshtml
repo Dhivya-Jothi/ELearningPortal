@@ -1,20 +1,27 @@
 ﻿
 @{
-    ViewBag.Title = "Home";
+	ViewBag.Title = "Home";
 }
 
 <h2>Welcome to DJPortal</h2>
 
 @using (Html.BeginForm())
 {
-	@Html.ActionLink("Logout","Login","User")
-	if (OnlineElearningSystem.Controllers.UserController.role.userRole=="Admin")
+	@Html.ActionLink("Logout", "Login", "User")<br />
+	if (OnlineElearningSystem.Controllers.UserController.role.userRole == "Admin")
 	{
-		@Html.ActionLink("Handle_User", "Handle_User", "Admin")
-
+		@Html.ActionLink("Handle_User", "Handle_User", "Admin")<br />
+		@Html.ActionLink("CreateCategory", "CreateCategory", "Category")<br />
+		@Html.ActionLink("CreateCourse", "CreateCourse", "Course")<br />
+		@Html.ActionLink("CreateTopic", "CreateTopic", "Topic")<br />
+		@Html.ActionLink("CreateLink", "CreateLink", "Link")<br />
+		@Html.ActionLink("Handle_Category", "Handle_Category", "Category")<br />
+		@Html.ActionLink("Handle_Course", "Handle_Course", "Course")<br />
+		@Html.ActionLink("Handle_Topic", "Handle_Topic", "Topic")<br />
+		@Html.ActionLink("Handle_Link", "Handle_Link", "Link")<br />
 	}
-	else if(OnlineElearningSystem.Controllers.UserController.role.userRole == "User")
+	else if (OnlineElearningSystem.Controllers.UserController.role.userRole == "User")
 	{
-		@Html.ActionLink("","","")
+		@Html.ActionLink("", "", "")
 	}
 }

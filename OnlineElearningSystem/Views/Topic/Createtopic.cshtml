@@ -1,0 +1,47 @@
+﻿@model OnlineElearningSystem.Models.TopicModel
+
+@{
+	ViewBag.Title = "Createtopic";
+}
+
+<h2>Createtopic</h2>
+@Html.ValidationSummary(true)
+@Html.ActionLink("Back", "Home", "User")
+@using (Html.BeginForm("Createtopic", "Topic", FormMethod.Post))
+{
+
+	<table style="line-height:30px">
+		<tr>
+			<td>Course</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.DropDownListFor(model => model.courseId, (IEnumerable<SelectListItem>)ViewBag.Course, "Choose Course")
+
+			</td>
+
+		</tr>
+		<tr>
+			<td>TopicName</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.topicName, new { @maxlength = "100" })
+				@Html.ValidationMessageFor(model => model.topicName, "", new { style = "color:red" })
+			</td>
+		</tr>
+		<tr>
+			<td>TopicCost</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.cost)
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Submit" />
+
+
+			</td>
+		</tr>
+	</table>
+}
+
+
+

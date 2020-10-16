@@ -1,0 +1,58 @@
+﻿@model OnlineElearningSystem.Entity.Link
+
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Link", FormMethod.Post))
+{
+	@Html.HiddenFor(model => model.linkId)
+
+	<table>
+		<tr>
+
+			<th>Topic</th>
+
+		</tr>
+		<tr>
+
+			<td>
+				@Html.DropDownListFor(model => model.topicId, (IEnumerable<SelectListItem>)ViewBag.topic, "Choose topic")
+				@*@Html.TextBoxFor(model => model.categoryId)*@
+			</td>
+
+		</tr>
+		<tr>
+
+			<th>LinkID</th>
+
+		</tr>
+		<tr>
+
+			<td>
+				@Html.TextBoxFor(model => model.linkId)
+			</td>
+
+		</tr>
+		<tr>
+
+			<th>Link</th>
+
+		</tr>
+		<tr>
+
+			<td>
+				@Html.TextBoxFor(model => model.link, new { @maxlength = "100" })
+				@Html.ValidationMessageFor(model => model.link, "", new { style = "color:red" })
+			</td>
+
+		</tr>
+
+	</table>
+	<input type="submit" />
+}
+
+
+
+

@@ -7,13 +7,13 @@ namespace OnlineElearningSystem.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class dekd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dekd));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002251316275_InitialCreate"; }
+            get { return "202003170625154_dekd"; }
         }
         
         string IMigrationMetadata.Source

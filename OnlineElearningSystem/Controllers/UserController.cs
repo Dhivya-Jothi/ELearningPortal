@@ -30,21 +30,22 @@ namespace OnlineElearningSystem.Controllers
 			IEnumerable<UserDetail> detail = UserRepository.SignUp();
 			if (ModelState.IsValid)
 			{
-				UserDetail userDetail = new UserDetail {
-				userId = userDetailModel.userId,
-				userName = userDetailModel.userName,
-				gender = userDetailModel.gender,
-				confirmPassword = userDetailModel.confirmPassword,
-				mobileNumber = userDetailModel.mobileNumber,
-				mailId = userDetailModel.mailId,
-				dateOfBirth = userDetailModel.dateOfBirth,
-				mediumOfStudy = userDetailModel.mediumOfStudy,
-				userRole = "User",
-			};
+
+				var newUser = AutoMapper.Mapper.Map<UserDetailModel, UserDetail>(userDetailModel);
+				//UserDetail userDetail = new UserDetail
+				//{
+				//	userId = userDetailModel.userId,
+				//	userName = userDetailModel.userName,
+				//	gender = userDetailModel.gender,
+				//	confirmPassword = userDetailModel.confirmPassword,
+				//	mobileNumber = userDetailModel.mobileNumber,
+				//	mailId = userDetailModel.mailId,
+				//	dateOfBirth = userDetailModel.dateOfBirth,
+				//	mediumOfStudy = userDetailModel.mediumOfStudy,
+				//	userRcvcole = "User",
+				//};
 				User user = new User();
-				//UserRepository.SignUp();
-				user.SignUp(userDetail);
-				//return RedirectToAction("Login");
+				user.SignUp(newUser);
 			}
 			return View();
 		}
@@ -70,6 +71,8 @@ namespace OnlineElearningSystem.Controllers
 				User user = new User();
 				role = user.Login(userDetail);
 				return RedirectToAction("Home", role);
+
+
 				//if (user.Login(userDetail) == "Admin")
 				//{
 				//	return RedirectToAction("Handle_User", "Admin");

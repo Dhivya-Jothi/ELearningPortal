@@ -1,0 +1,34 @@
+﻿@model IEnumerable<OnlineElearningSystem.Entity.Category>
+
+@{
+	ViewBag.Title = "Handle_Category";
+}
+
+<h2>Handle_Category</h2>
+
+@Html.ActionLink("Back", "Home", "User")
+
+<table>
+	<tr>
+		<th>CategoryId</th>
+		<th>CategoryName</th>
+	</tr>
+	@foreach (OnlineElearningSystem.Entity.Category item in Model)
+	{
+		<tr>
+			<td>
+				@item.categoryId
+			</td>
+			<td>
+				@item.categoryName
+			</td>
+
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { categoryId = item.categoryId })
+				@Html.ActionLink("Delete", "Delete", new { id = item.categoryId })
+			</td>
+
+		</tr>
+	}
+</table>
+

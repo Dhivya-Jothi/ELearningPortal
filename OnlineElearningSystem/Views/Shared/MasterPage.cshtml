@@ -2,15 +2,25 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="~/StyleSheet/EPortalStyle.css" type="text/css" />
+
+	<title>@ViewBag.Title</title>
 </head>
-<body>
-    <div>
-		<h1 >DJ ELearning Portal</h1>
-		@Html.ActionLink("SigUp", "SignUp", "User")
-		@Html.ActionLink("Login", "Login","User")
-        @RenderBody()
-    </div>
+<body style="background-color:  #e6ffff">
+
+	<h1 class="DJingoHead">DJINGO </h1>
+	
+		<div>
+			<div class="DJingoHead">
+				@Html.ActionLink("SigUp", "SignUp", "User")
+				@Html.ActionLink("Login", "Login", "User")
+			</div>
+			<div>
+				@RenderBody()
+			</div>
+
+		</div>
+	
 </body>
 </html>

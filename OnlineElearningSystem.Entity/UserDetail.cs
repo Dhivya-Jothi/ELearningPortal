@@ -8,7 +8,7 @@ namespace OnlineElearningSystem.Entity
 	{
 		[Key]
 		[Required]
-		public string userId { get; set; }
+		public int userId { get; set; }
 		[Required]
 		public string userName { get; set; }
 		[Required]
@@ -17,7 +17,7 @@ namespace OnlineElearningSystem.Entity
 		[Required]
 		public string gender { get; set; }	
 		[Required]	
-		public string mobileNumber { get; set; }	
+		public long mobileNumber { get; set; }	
 		[Required]	
 		public string mailId { get; set; }
 		public string dateOfBirth { get; set; }

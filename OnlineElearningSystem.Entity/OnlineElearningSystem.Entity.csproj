@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="keyAttribute.cs" />
+    <Compile Include="Link.cs" />
+    <Compile Include="Topic.cs" />
     <Compile Include="UserDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

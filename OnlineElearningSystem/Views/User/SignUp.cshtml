@@ -10,42 +10,34 @@
 @using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
 
-	<table style="line-height:30px">
+	<table  class="HeadTags" >
 		@{
 			Html.RenderPartial("Eportal");
 		}
 		<tr>
-			<td>userId</td>
-			<td style="margin-top:100%;height:10%">
-			
-				@Html.TextBoxFor(model => model.userId)
-				@Html.ValidationMessageFor(model => model.userId)
-			</td>
-		</tr>
-		<tr>
 			<td>userName</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.userName)
-				@Html.ValidationMessageFor(model => model.userName)
+			<td >
+				@Html.TextBoxFor(model => model.userName,new { @maxlength = "50" })
+				@Html.ValidationMessageFor(model => model.userName,"",new { style="color:red"} ) 
 			</td>
 		</tr>
 		<tr>
 			<td>password</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.password)
-				@Html.ValidationMessageFor(model => model.password)
+			<td >
+				@Html.PasswordFor(model => model.password, new { @maxlength = "30" })
+				@Html.ValidationMessageFor(model => model.password,"", new { style = "color:red" })
 			</td>
 		</tr>
 		<tr>
 			<td>confirmPassword</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.confirmPassword)
-				@Html.ValidationMessageFor(model => model.confirmPassword)
+			<td >
+				@Html.PasswordFor(model => model.confirmPassword, new { @maxlength = "30" })
+				@Html.ValidationMessageFor(model => model.confirmPassword, "", new { style = "color:red" })
 			</td>
 		</tr>
 		<tr>
 			<td>gender</td>
-			<td style="margin-top:100%;height:10%">
+			<td >
 				@Html.RadioButtonFor(m => m.gender, "Male")Male
 				@Html.RadioButtonFor(m => m.gender, "Female")Female
 
@@ -53,30 +45,30 @@
 		</tr>
 		<tr>
 			<td>mobileNumber</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.mobileNumber)
-				@Html.ValidationMessageFor(model => model.mobileNumber)
+			<td >
+				@Html.TextBoxFor(model => model.mobileNumber, new { @maxlength = "10" })
+				@Html.ValidationMessageFor(model => model.mobileNumber, "", new { style = "color:red" })
 			</td>
 		</tr>
 		<tr>
 			<td>mailId</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.mailId)
-				@Html.ValidationMessageFor(model => model.mailId)
+			<td>
+				@Html.TextBoxFor(model => model.mailId, new { @maxlength = "100" })
+				@Html.ValidationMessageFor(model => model.mailId, "", new { style = "color:red" })
 			</td>
 		</tr>
 		<tr>
 			<td>dateOfBirth</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.dateOfBirth)
-				@Html.ValidationMessageFor(model => model.dateOfBirth)
+			<td >
+				@Html.TextBoxFor(model => model.dateOfBirth, new { @maxlength = "30" })
+				@Html.ValidationMessageFor(model => model.dateOfBirth, "", new { style = "color:red" })
 			</td>
 		</tr>
 		<tr>
 			<td>mediumOfStudy</td>
-			<td style="margin-top:100%;height:10%">
-				@Html.TextBoxFor(model => model.mediumOfStudy)
-				@Html.ValidationMessageFor(model => model.mediumOfStudy)
+			<td >
+				@Html.TextBoxFor(model => model.mediumOfStudy, new { @maxlength = "15" })
+				@Html.ValidationMessageFor(model => model.mediumOfStudy, "", new { style = "color:red" })
 			</td>
 		</tr>
 		<tr>

@@ -1,0 +1,31 @@
+﻿@model OnlineElearningSystem.Models.CategoryModel
+
+@{
+	ViewBag.Title = "CreateCategory";
+}
+
+<h2>CreateCategory</h2>
+
+@using (Html.BeginForm("CreateCategory", "Category", FormMethod.Post))
+{
+
+	<table style="line-height:30px">
+
+
+		<tr>
+			<td>CategoryName</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.categoryName, new { @maxlength = "50" })
+				@Html.ValidationMessageFor(model => model.categoryName, "", new { style = "color:red" })
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Submit" />
+
+
+			</td>
+		</tr>
+	</table>
+}

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<OnlineElearningSystem.Entity.Link>
+
+@{
+	ViewBag.Title = "Handle_Link";
+}
+
+<h2>Handle_Link</h2>
+@Html.ActionLink("Back", "Home", "User")
+
+<table>
+	<tr>
+		<th>LinkId</th>
+		<th>Link</th>
+		
+	</tr>
+	@foreach (OnlineElearningSystem.Entity.Link item in Model)
+	{
+		<tr>
+			<td>
+				@item.linkId
+			</td>
+			<td>
+				@item.link
+			</td>
+			
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { linkId = item.linkId })
+				@Html.ActionLink("Delete", "Delete", new { id = item.linkId })
+			</td>
+
+		</tr>
+	}
+</table>
+
+

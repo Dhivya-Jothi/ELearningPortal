@@ -1,0 +1,37 @@
+﻿@model IEnumerable<OnlineElearningSystem.Entity.Topic>
+
+@{
+	ViewBag.Title = "Handle_Topic";
+}
+
+<h2>Handle_Topic</h2>
+@Html.ActionLink("Back", "Home", "User")
+
+<table>
+	<tr>
+		<th>TopicId</th>
+		<th>TopicName</th>
+		<th>Cost</th>
+	</tr>
+	@foreach (OnlineElearningSystem.Entity.Topic item in Model)
+	{
+	<tr>
+		<td>
+			@item.topicId
+		</td>
+		<td>
+			@item.topicName
+		</td>
+		<td>
+			@item.cost
+		</td>
+		<td>
+			@Html.ActionLink("Edit", "Edit", new { topicId = item.topicId })
+			@Html.ActionLink("Delete", "Delete", new { id = item.topicId })
+		</td>
+
+	</tr>
+	}
+</table>
+
+

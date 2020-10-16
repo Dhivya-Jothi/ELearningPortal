@@ -1,0 +1,38 @@
+﻿@model OnlineElearningSystem.Models.CourseModel
+
+@{
+	ViewBag.Title = "CreateCourse";
+}
+
+<h2>CreateCourse</h2>
+@Html.ValidationSummary(true)
+
+@using (Html.BeginForm("CreateCourse", "Course", FormMethod.Post))
+{
+
+	<table style="line-height:30px">
+		<tr>
+			<td>Category</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.DropDownListFor(model => model.categoryId, (IEnumerable<SelectListItem>)ViewBag.Category, "Choose category")
+
+			</td>
+
+		</tr>
+		<tr>
+			<td>CourseName</td>
+			<td style="margin-top:100%;height:10%">
+				@Html.TextBoxFor(model => model.courseId, new { @maxlength = "50" })
+				@Html.ValidationMessageFor(model => model.courseId, "", new { style = "color:red" })
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Submit" />
+
+
+			</td>
+		</tr>
+	</table>
+}
+

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+
 
 namespace OnlineElearningSystem.Models
 {
 	public class UserDetailModel
-	{
-		[Key]	
-		public string userId { get; set; }
+	{ 
+		public int userId { get; set; }
 		[Required]
 		[MaxLength(30)]
 		[DataType(DataType.Text)]
@@ -27,7 +24,7 @@ namespace OnlineElearningSystem.Models
 		[DataType(DataType.PhoneNumber)]
 		[Required]
 		[RegularExpression("^[6-9][0-9]{9}$", ErrorMessage = "Enter valid mobile number")]
-		public string mobileNumber { get; set; }
+		public long mobileNumber { get; set; }
 		[DataType(DataType.EmailAddress)]
 		[Required]
 		[RegularExpression("[a-z]+[0-9a-z]*@[a-z]*.[a-z]{3}", ErrorMessage = "Email is not valid.")]
